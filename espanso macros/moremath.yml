@@ -1,0 +1,118 @@
+matches:
+  - trigger: gensol
+    replace: general solution
+    uppercase_style: capitalize_words
+    propagate_case: true
+    
+  - trigger: trivsol
+    replace: trivial solution
+    uppercase_style: capitalize_words
+    propagate_case: true
+  
+  - trigger: ntrivsol
+    replace: non-trivial solution
+    uppercase_style: capitalize_words
+    propagate_case: true
+
+  - trigger: arbpar
+    replace: arbitrary parameter
+    uppercase_style: capitalize_words
+    propagate_case: true
+
+  - trigger: linsys 
+    replace: linear system
+    uppercase_style: capitalize_words
+    propagate_case: true
+  
+  - trigger: xyz-space
+    replace: $xyz$-space
+
+  - trigger: xy-space
+    replace: $xy$-space
+
+  - trigger: linequ
+    replace: linear equation
+
+  - trigger: ims 
+    replace: infinitely many solutions 
+    uppercase_style: capitalize_words
+    propagate_case: true
+
+  - trigger: homog
+    replace: homogeneous
+    uppercase_style: capitalize_words
+    propagate_case: true
+
+  - trigger: homsys
+    replace: homogeneous system
+    uppercase_style: capitalize_words
+    propagate_case: true
+
+  - trigger: soln
+    replace: solution
+
+  - trigger: sols
+    replace: solutions 
+    propagate_case: true
+
+  - trigger: hls
+    replace: homogeneous linear system
+    uppercase_style: capitalize_words
+    propagate_case: true
+
+  - trigger: :ele
+    replace: |
+      $$\Huge\left\{\substack{
+      a_{11}x_1&+&a_{12}x_2 &+&\:\dots &+& a_{1n}x_n &=& b_1 \\ 
+      a_{21}x_1&+&a_{22}x_2&+&\:\dots&+&a_{2n}x_n &=& b_2\\
+      &\vdots &&&&&&\vdots&\\
+      a_{m1}x_1&+&a_{m2}x_m &+&\:\dots &+& a_{mn}x_n &=& b_m 
+      }\right.$$
+
+  - trigger: :hle
+    replace: |
+      $$\Huge\left\{\substack{
+      a_{11}x_1&+&a_{12}x_2 &+&\:\dots &+& a_{1n}x_n &=& 0 \\ 
+      a_{21}x_1&+&a_{22}x_2&+&\:\dots&+&a_{2n}x_n &=& 0\\
+      &\vdots &&&&&&\vdots&\\
+      a_{m1}x_1&+&a_{m2}x_m &+&\:\dots &+& a_{mn}x_n &=& 0 
+      }\right.$$
+  
+  - trigger: a11amn
+    replace: $a_{11},a_{12},\:\dots,a_{mn}$
+
+  - trigger: x1xn
+    replace: $x_1 = 1, x_2 = 0,\:\dots, x_n = 0$
+
+  - regex: "L(?P<num>.*)\\."
+    replace: "$L_{{{num}}}$"
+
+  - regex: "\\.(?P<num1>.*)\\*(?P<num2>.*)\\."
+    replace: "${{{num1}}} \\times{{{num2}}}$"
+    word: true
+
+  - regex: "P(?P<num>.*)\\."
+    replace: "$P_{{{num}}}$"
+
+  - trigger: :xyheg
+    replace: |
+     $$\Huge\left\{ \substack{
+     &a_1x& \, &+& \, &b_1y& \, &=& \, &0& \quad &(L_1)& \\ 
+     &a_2x& \, &+& \, &b_2y& \, &=& \, &0&, \quad &(L_2)&
+     }\right.$$
+
+  - trigger: :xyzheg
+    replace: |
+     $$\Huge\left\{ \substack{
+     &a_1x& \, &+& \, &b_1y& \, &+& \, &c_1z& \, &=& \, &0& \quad &(P_1)& \\ 
+     &a_2x& \, &+& \, &b_2y& \, &+& \, &c_2z& \, &=& \, &0&, \quad &(P_2)&
+     }\right.$$
+
+  - trigger: Remark
+    replace: _Remark $|$_
+
+  - trigger: Definition
+    replace: _Definition $|$_
+
+  - trigger: ijentry 
+    replace: $(i,j)$-entry
