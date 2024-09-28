@@ -1,0 +1,235 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+  # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
+
+  # But matches can also be dynamic:
+
+  # Print the current date
+
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+
+  # And much more! For more information, visit the docs: https://espanso.org/docs/
+  - trigger: "$$"
+    replace: |
+      $$
+      $|$
+      $$
+  
+  - trigger: :R 
+    replace: $\R$
+    word: true
+
+  - trigger: :br
+    replace : $\bR$
+    
+  - trigger: :A 
+    replace: $A$
+    word: true
+
+  - trigger: :B 
+    replace: $B$
+    word: true
+
+  - trigger: .n
+    replace: $n$
+    propagate_case: true
+    word: true
+
+  - trigger: (aij)
+    replace: $(a_{ij})$
+    word: true
+
+  - trigger: aij
+    replace: $a_{ij}$
+    word: true
+
+  - trigger: A=aij
+    replace: $A = (a_{ij})$
+    
+  - trigger: A=uaij
+    replace: $A = (a_{ij})_{m \times n}$
+
+  - trigger: A=saij
+    replace: $A = (a_{ij})_{n \times n}$
+
+  - trigger: (bij)
+    replace: $(b_{ij})$
+    word: true
+
+  - trigger: Bij
+    replace: $B_{ij}$
+    word: true
+
+  - trigger: B=bij
+    replace: $B = (b_{ij})$
+    
+  - trigger: B=ubij
+    replace: $B = (B_{ij})_{p \times q}$
+
+  - trigger: :ream 
+    replace: _row-equivalent augmented matrix_
+
+  - trigger: :ref 
+    replace: _row-echelon form_
+    
+  - trigger: :rref 
+    replace: _reduced row-echelon form_
+
+  - trigger: :ero 
+    replace: _elementary row operations_
+
+  - trigger: :ls
+    form: |
+      $$\Huge\left\\{\substack{
+      [[stacks]]
+      }\right.$$
+      
+  - trigger: :41mat
+    form: |
+        $$
+        \left(
+        \begin{array}{cccc|c}
+        [[a11]] & [[a12]] & [[a13]] & [[a14]] & [[a15]]\\
+        [[a21]] & [[a22]] & [[a23]] & [[a24]] & [[a25]]\\
+        [[a31]] & [[a32]] & [[a33]] & [[a34]] & [[a35]]\\
+        [[a41]] & [[a42]] & [[a43]] & [[a44]] & [[a45]]\\
+        \end{array}
+        \right)
+        $$
+        
+  - trigger: :31mat
+    form: |
+        $$
+        \left(
+        \begin{array}{ccc|c}
+        [[a11]] & [[a12]] & [[a13]] & [[a14]]\\
+        [[a21]] & [[a22]] & [[a23]] & [[a24]]\\
+        [[a31]] & [[a32]] & [[a33]] & [[a34]]\\
+        \end{array}
+        \right)
+        $$
+
+  - trigger: :4mat
+    form: |
+        $$
+        \left(
+        \begin{array}{cccc}
+        [[a11]] & [[a12]] & [[a13]] & [[a14]]\\
+        [[a21]] & [[a22]] & [[a23]] & [[a24]]\\
+        [[a31]] & [[a32]] & [[a33]] & [[a34]]\\
+        [[a41]] & [[a42]] & [[a43]] & [[a44]]\\
+        \end{array}
+        \right)
+        $$
+
+  - trigger: :amnmat
+    replace: |
+        $$
+        \left(
+        \begin{array}{cccc}
+        a_{11} & a_{12} & \dots & a_{1n} \\
+        a_{21} & a_{22} & \dots & a_{2n}\\
+        \vdots & \vdots &  & \vdots \\
+        a_{m1} & a_{m2} & \dots & a_{mn}\\
+        \end{array}
+        \right)
+        $$
+
+  - trigger: :3mat
+    form: |
+        $$
+        \left(
+        \begin{array}{ccc}
+        [[a11]] & [[a12]] & [[a13]] \\
+        [[a21]] & [[a22]] & [[a23]] \\
+        [[a31]] & [[a32]] & [[a33]] \\
+        \end{array}
+        \right)
+        $$
+        
+  - trigger: :2mat
+    form: |
+        $$
+        \left(
+        \begin{array}{cc}
+        [[a11]] & [[a12]] \\
+        [[a12]] & [[a22]] \\
+        \end{array}
+        \right)
+        $$
+
+  - regex: ":mat\\((?P<num>.*)\\)"
+    replace: |
+        $$
+        \left(
+        \begin{array}{{{num}}}
+        $|$
+        \end{array}
+        \right)
+        $$
+    
+  - trigger: :ge
+    replace: "**Gaussian Elimination**"
+    propagate_case: true
+    word: false 
+
+  - trigger: :gje
+    replace: "**Gauss-Jordan Elimination**"
+    propagate_case: true
+    word: false
+
+  - trigger: :augmat
+    replace: augmented matrix
+    uppercase_style: capitalize_words
+    propagate_case: true
+
+  - trigger: inj
+    replace: $i \ne j$
+
+  - trigger: :lra
+    replace: $\leftrightarrow$
+
+  - trigger: :Lra
+    replace: $\Leftrightarrow$
+
+  - trigger: :llra
+    replace: $\longleftrightarrow$
+
+  - trigger: :Llra
+    replace: $\Longleftrightarrow$
+
+  - trigger: ith
+    replace: $i$th
+    word: true
+
+  - trigger: jth
+    replace: $j$th
+    word: true
+
+  - trigger: Ri
+    replace: $R_i$
+    word: true
+
+  - trigger: Rj
+    replace: $R_j$
+    word: true
+
+  - trigger: :dk
+    replace: $k$
+    propagate_case: true
