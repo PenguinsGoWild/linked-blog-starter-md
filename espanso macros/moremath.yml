@@ -121,10 +121,10 @@ matches:
     replace: $(i,j)$-entries
 
   - trigger: A+B
-    replace: $A + B$
+    replace: $\mathbf{A} + \mathbf{B}$
 
   - trigger: B1+B2
-    replace: $B_1 + B_2$
+    replace: $\mathbf{B_1} + \mathbf{B_2}$
 
   - trigger: \tn
     replace: \textnormal{$|$}
@@ -149,13 +149,34 @@ matches:
     replace: $m\times n$
   
   - trigger: AuT
-    replace: $A^T$
+    replace: $\mathbf{A}^T$
 
   - trigger: BuT
-    replace: $B^T$
+    replace: $\mathbf{B}^T$
 
   - trigger: nbm
     replace: $n\times m$
 
   - trigger: ;ab
-    replace: $AB$
+    replace: $\mathbf{AB}$
+
+  - trigger: ;ba
+    replace: $\mathbf{BA}$
+
+  - trigger: ;b1
+    replace: $\mathbf{B_1}$
+
+  - trigger: ;b2
+    replace: $\mathbf{B_2}$
+
+  - trigger: ;a-1
+    replace: $\mathbf{}A^{-1}}$
+
+  - trigger: AB=I 
+    replace: $\mathbf{AB = I}$
+
+  - trigger: BA=I 
+    replace: $\mathbf{BA = I}$
+
+  - trigger: A1Ak 
+    replace: $\mathbf{A_{1},A_{2}},\:\dots,\mathbf{A_{k}}$

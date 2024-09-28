@@ -310,3 +310,51 @@ _Remark 2.2.21_
 *Discussion 2.3.1*: Let $a,b$ be two real numbers such that $a\ne 0$. Then the solution to the equation $ax=b$ is $x=\frac{b}{a}=a^-1b$. Now, let $A$ and $B$ be two matrices. It is much harder to solve the matrix equation $\mathbf{AX} = \mathbf{B}$ because we do not have "division" for matrices. However, for some square matrices, we can fine their "inverses" which have the similar property as $a_1$ in the computation of the solution to $ax=b$ above
 
 **Definition 2.3.2**: Let $A$ be a square matrix of order $n$. Then $A$ is said to be *invertible* if there exists a square matrix B of order $n$ such that $\mathbf{ AB = I}$ and $\mathbf{BA = I}$. Such a matrix $B$ is called an inverse of $A$. A square matrix is called singular if it has no inverse.
+
+_Remark 2.3.4_
+1. **(Cancellation Laws for Matrices)**: Let $A$ be an invertible $m\times m$ matrix.
+	(a) If $B_1$ and $B_2$ are $m\times n$ matrices with $AB_1 = AB_2$, then $B_1 = B_2$.
+	(b) If $C_1$ and $C_2$ are $n\times m$ matrices with $C_1A = C_2A$, then $C_1 = C_2$
+2. If the matrix $A$ in Part 1 is singular, then the Cancellation law may not hold.
+	For example, take $A$ $=$ $\left(\begin{array}{cc}1 & 1 \\1 & 0 \\\end{array}\right)$, $B_1$ $=$ $\left(\begin{array}{cc}2 & 0 \\0 & 1 \\\end{array}\right)$, $B_2$ $=$ $\left(\begin{array}{cc}2 & 0 \\1 & 3 \\\end{array}\right)$. Then $AB_1= AB_2=\left(\begin{array}{cc}2 & 0 \\2 & 0 \\\end{array}\right)$ but $B_1\ne B_2$.
+**Theorem 2.3.5 (Uniqueness of Inverses)**: If $B$ and $C$ are inverses of a square matrix $A$, then $B = C$.
+	**Proof**: Since $B$ is an inverse of A, we have
+	$$
+	\mathbf{BA = I} \textnormal{ and } \mathbf{AB = I}
+	$$
+	Also, since $C$ is an inverse of $A$, we have
+	$$
+	\mathbf{CA = I} \textnormal{ and } \mathbf{AC = I}
+	$$
+	So $\mathbf{AB = I} \Rightarrow \mathbf{CAB = CI} \rightarrow \mathbf{IB = C}\rightarrow \mathbf{B = C}$.
+
+*Notation 2.3.6* Let $A$ be an invertible matrix. By **Theorem 2.3.5**, we know that there is only one inverse of $A$ and we use the symbol $A^{-1}$ to denote this unique inverse of $A$.
+
+*_Remark  2.3.7_* If we are asked to show that $\mathbf{A^{-1} = B}$  where $A$ and $B$ are square matrices of the same size, what we need to do is to check that $\mathbf{AB = I}$ and $\mathbf{BA = I}$. Actually, in the next section, we shall learn that we only need to check any one of the two conditions. (See **Theorem 2.4.12.**)
+
+**Theorem 2.3.9**: Let $A$, $B$ be two invertible matrices of the same size and $c$ a nonzero scalar. Then 
+1. c$\mathbf{A}$ is invertible and $(c\mathbf{A})^{-1}= \frac{1}{c}\mathbf{A}^{-1}$
+2. $\mathbf{A}^{-1}$ is invertible and $(\mathbf{A})^{-1}= (\mathbf{A}^{-1})^T$
+3. $\mathbf{A}^{-1}$ is invertible and $((\mathbf{A})^{-1})^{-1}= \mathbf{A}^T$
+4. $\mathbf{AB}$ is invertible and $(\mathbf{AB})^{-1} = \mathbf{B^{-1}A^{-1}}$
+
+**Proof**: In the following, we only illustrate the proof of Part 2 of the theorem:
+
+To show that $\mathbf{A}^T$ is invertible, we only need to verify that $(\mathbf{A}^{-1})^T$ is the inverse of $\mathbf{A}^T$. Note that
+$$
+\mathbf{A}^T(\mathbf{A}^{-1})^T = (\mathbf{A}^{-1}\mathbf{A})^T=\mathbf{I}^T=\mathbf{I}\quad\textnormal{and}\quad
+(\mathbf{A}^{-1})^T\mathbf{A}^T = (\mathbf{A}\mathbf{A})^T=\mathbf{I}^T=\mathbf{I}
+$$
+By *_Remark  2.3.7_*, we have proven that $\mathbf{A}^T$ is invertible and $(\mathbf{A}^T)^{-1}=(\mathbf{A}^{-1})^T$.
+
+_Remark 2.3.10_: By **Theorem 2.3.9.4**, if $\mathbf{A_{1},A_{2}},\:\dots,\mathbf{A_{k}}$ are invertible matrices of the same size, then $\mathbf{A_{1}A_{2}}\:\dots\mathbf{A_{k}}$ is invertible and ($\mathbf{A_{1}A_{2}}\:\dots\mathbf{A_{k}})^{-1} = \mathbf{A_{k}}^{-1}\:\dots\mathbf{A_{2}}^{-1}\mathbf{A_{1}}^{-1}$
+
+**Definition 2.3.11 (Negative Powers of Square Matrices)**: Let $A$ be an invertible matrix and $n$ a positive integer. We define $\mathbf{A}^{-n}$ as follows:
+$$
+\Huge\mathbf{A}^{-n}=(\mathbf{A}^{-1})^n=\underbrace{\mathbf{A^{-1}A^{-1}}\:\ldots\,\mathbf{A^{-1}}}_{n \text{ times}}
+$$
+_Remark 2.3.13_: Let $A$ be an invertible matrix.
+1. $\mathbf{A}^r$$\mathbf{A}^s = \mathbf{A}^{r+s}$ for any integers $r$ and $s$.
+2. $\mathbf{A}^n$ is invertible and $(\mathbf{A}^n)^{-1}=\mathbf{A}^{-n}$
+
+# Section 2.4 Elementary Matrices
