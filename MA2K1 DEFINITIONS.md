@@ -184,5 +184,56 @@ _Remark  2.2.5_
 **Proof** Since the sizes of all the matrices are the same, to verify the rules above, we only need to show that the $(i,j)$-entries of the resulting matrix on LHS are equal to the $(i,j)$-entries of the resulting matrix on RHS. In the following, we illustrate the proof of $A + (B+C) = (A+B) + C$:
 Let $A = (a_{ij}),$$B = (b_{ij})$ and $C = (c_{ij})$. Then for any $i,j,$
 			the $(i,j)$-entry of $A + (B+C)$
-			$=$ $a_{ij}\; +$ \[the $(i,j)$-entry of $B+C$\]
-			$=$ $a_{ij}$ 
+			$=$ $a_{ij} + [\textnormal{the } (i,j)\textnormal{-entry of } B + C]$
+			$=$ $a_{ij} + [b_{ij} + c_{ij}]$
+			$=$ $[a_{ij} + b_{ij}] + c_{ij}$
+			$=$ $[\textnormal{the } (i,j)\textnormal{-entry of } A + B] + c_{ij}$
+			$=$ $\textnormal{the } (i,j)\textnormal{-entry of } (A + B) + C$
+			
+_Remark 2.2.7_: Let $A_{1},A_{2},\:\dots,A_{k}$ be matrices of the same size. By Associative Law for Matrix Addition, we can write$A_{1},A_{2},\:\dots,A_{k}$ to represent the sum of matrices without using any parentheses to indicate the order of matrix additions.
+
+_Definition 2.2.8 (Matrix Multiplication)_: Let $A = (a_{ij})_{m \times p}$ and $B = (B_{ij})_{p \times n}$ be two matrices. The product $AB$ is defined to be an ${m} \times{n}$ matrix whose $(i,j)$-entry is 
+$$
+\Huge a_{i1}b_{1j},\:a_{i2}b_{2j},\:\dots,\:+\: a_{ip}b_{pj} = \sum_{k=1}^{p} a_{ik}b_{kj}
+$$
+for $i = 1,2,\:\dots,m$ and $j = 1,2,\:\dots,n.$
+
+_Remark 2.2.10_: 
+1. We can only multiply two matrices $A$ and $B$ (in the manner $AB$) when the number of columns of $A$ is equal to the number of rows of $B$.
+2. The matrix multiplication is not commutative, i.e. in general, $AB$ and $BA$ are two different matrices even if the products exits.
+3. In view of Part 2 above, it would be ambiguous to say "the multiplication of a matrix $A$ to another matrix $B$" since it could mean $AB$ or $BA$. To distinguish the two, we refer to $AB$ as the *pre-multiplication* of $A$ to $B$ and $BA$ as the _post-multiplication_ of $A$ to $B$.
+4. $AB = 0$ does not imply $A = 0$ or $B = 0$
+	For example, let $A$ = $\left(\begin{array}{cc}0 & 1 \\ 0 & 1\end{array}\right)$ $B$ = $\left(\begin{array}{cc}1 & 1 \\ 0 & 0\end{array}\right)$. We have $A\ne0$ and $B\ne0$ whilst
+$$
+	\Huge AB = \left(\begin{array}{cc}0 & 1 \\ 
+	0 & 1\end{array}\right)\left(\begin{array}{cc}0 & 1 \\ 
+	0 & 1\end{array}\right) = \left(\begin{array}{cc}0 & 0 \\
+	0 & 0\end{array}\right) = \mathbf{0}
+$$
+$$
+\newcommand{\0}{\mathbf 0}
+$$
+
+**Theorem 2.2.11**
+1. **(Associative Law for Matrix Multiplication)**
+	If $A, B$ and $C$ are ${m} \times{p}$ , ${p} \times{q}$ and ${q} \times{n}$ matrices respectively, then
+$$ \Huge A(BC) = (AB)C $$
+2. **(Distributive Laws for Matrix Addition and Multiplication)**
+	If $A, B_1$ and $B_2$ are ${m} \times{p}$ , ${p} \times{q}$ and ${q} \times{n}$ matrices respectively, then
+$$ \Huge A(B_1 + B_2) = AB_1 + AB_2 $$
+	If $A, C_1$ and $C_2$ are ${m} \times{p}$ , ${p} \times{q}$ and ${q} \times{n}$ matrices respectively, then
+$$ \Huge A(C_1 + C_2) = AC_1 + AC_2 $$
+3. If $A, B$ are ${m} \times{p}$ , ${p} \times{n}$ matrices respectively, and $c$ is a scalar, then
+	$$\Huge c(AB) = (cA)B = A(cB).$$
+4. If $A$ is an ${m} \times{n}$ matrix, then
+	$$\Huge A\mathbf{0}_{n\times q} = \0_{m\times q},\quad \0_{n\times q}A = \0_{m\times q} \quad\textnormal{and}  \quad AI_n = I_mA = A $$
+
+**Proof**: To prove the matrix identities above, we need to check that
+	(i) the size of the resulting matrix on the LHS is equal to that on the RHS, and
+	(ii) the $(i,j)$-entries of the resulting matrix on the LHS are equal to those on the RHS. 
+In the following, we illustrate the proof of $A(B_1+B_2) = AB_1 + AB_2:$
+	(i) Since the size of $A$ is ${m} \times{p}$ and the size of $B_1 + B_2) is ${p} \times{n}$, the size of $A(B_1+B_2)$ is ${m} \times{n}$. On the other hand, both the sizes of $AB_1$ and $AB_2$ are ${m} \times{n}$ and hence the size of $AB_1 + AB_2$ is ${m} \times{n}$.
+		Thus the sizes of the resulting matrices on both sides of the identity are the same.
+	(ii) Let $A = (a_{ij})$, $B_1 = (b_{ij})$ and $B_2 = (b'_{ij})$. For any $i,j$,
+		![[Pasted image 20240928214728.png]]
+		

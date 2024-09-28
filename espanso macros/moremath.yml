@@ -116,3 +116,18 @@ matches:
 
   - trigger: ijentry 
     replace: $(i,j)$-entry
+    
+  - trigger: ijentries
+    replace: $(i,j)$-entries
+
+  - trigger: A+B
+    replace: $A + B$
+
+  - trigger: B1+B2
+    replace: $B_1 + B_2$
+
+  - trigger: \tn
+    replace: \textnormal{$|$}
+
+  - trigger: \mbf
+    replace: \mathbf{$|$}
