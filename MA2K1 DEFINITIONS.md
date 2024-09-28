@@ -305,4 +305,8 @@ _Remark 2.2.21_
 **Proof**: In the following, we illustrate the proof of $(AB)^T = B^TA^T$:
 	(i) Since the size of $AB$ is $m\times p$, the size of $(AB)^T$ is $p\times m$. On the other hand, since the size of $B^T$ is $p\times n$ and $A^T$ is $n\times m$, the size of $B^TA^T$ is $p\times m$. Thus the sizes of the resulting matrices on both sides of the identity are the same.
 	![[Pasted image 20240928223750.png]]
-	
+
+# Section 2.3 Inverses of Square Matrices
+*Discussion 2.3.1*: Let $a,b$ be two real numbers such that $a\ne 0$. Then the solution to the equation $ax=b$ is $x=\frac{b}{a}=a^-1b$. Now, let $A$ and $B$ be two matrices. It is much harder to solve the matrix equation $\mathbf{AX} = \mathbf{B}$ because we do not have "division" for matrices. However, for some square matrices, we can fine their "inverses" which have the similar property as $a_1$ in the computation of the solution to $ax=b$ above
+
+**Definition 2.3.2**: Let $A$ be a square matrix of order $n$. Then $A$ is said to be *invertible* if there exists a square matrix B of order $n$ such that $\mathbf{ AB = I}$ and $\mathbf{BA = I}$. Such a matrix $B$ is called an inverse of $A$. A square matrix is called singular if it has no inverse.

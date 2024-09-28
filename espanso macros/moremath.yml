@@ -111,8 +111,8 @@ matches:
   - trigger: Remark
     replace: _Remark $|$_
 
-  - trigger: Definition
-    replace: _Definition $|$_
+  - trigger: Defn
+    replace: "**Definition $|$**"
 
   - trigger: ijentry 
     replace: $(i,j)$-entry
@@ -131,3 +131,31 @@ matches:
 
   - trigger: \mbf
     replace: \mathbf{$|$}
+
+  - trigger: :colmat
+    form: |
+      $$
+      \left(
+      \begin{array}{c}
+      [[1]]_1\\[[2]]_2\\\vdots\\[[3]]_n
+      \end{array}
+      \right)
+      $$
+
+  - trigger: Ax=b
+    replace: $\mathbf{Ax = b}$
+
+  - trigger: mbn 
+    replace: $m\times n$
+  
+  - trigger: AuT
+    replace: $A^T$
+
+  - trigger: BuT
+    replace: $B^T$
+
+  - trigger: nbm
+    replace: $n\times m$
+
+  - trigger: ;ab
+    replace: $AB$
