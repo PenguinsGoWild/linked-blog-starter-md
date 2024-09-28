@@ -113,9 +113,9 @@ _Remark 1.5.4_
 # Chapter 2
 # Matrices
 
-_Definition 2.1.1_: A matrix (plural matrices) is a rectangular array of numbers. The numbers in the array are called entries in the matrix. The size of a matrix is given by $m \times n$ where $m$is the number of rows and $n$ is the number of columns. The $(i,j)$-entry of a matrix is the number which is in the $i$th row and $j$th column of the matrix.
+__Definition 2.1.1__: A matrix (plural matrices) is a rectangular array of numbers. The numbers in the array are called entries in the matrix. The size of a matrix is given by $m \times n$ where $m$is the number of rows and $n$ is the number of columns. The $(i,j)$-entry of a matrix is the number which is in the $i$th row and $j$th column of the matrix.
 
-_Definition  2.1.3_: A column matrix (or a _column vector_) is a matrix with only one column. A row matrix (or a _row vector_) is a matrix with only one row.
+__Definition  2.1.3__: A column matrix (or a _column vector_) is a matrix with only one column. A row matrix (or a _row vector_) is a matrix with only one row.
 
 *Example 1*
 $$
@@ -147,7 +147,7 @@ a_{m1} & a_{m2} & \dots & a_{mn}\\
 $$
 or simply $A = (a_{ij})_{m \times n}$ where $a_{ij}$ is th $(i,j)$-entry of $A$. Sometimes, if the size of the matrix is already known, we may just write $A$ $=$ $(a_{ij})$.
 
-_Definition 2.1.7_: The following are some special types of matrices:
+__Definition 2.1.7__: The following are some special types of matrices:
 1. A matrix is called a square matrix if it has the same number of _rows_ and _columns_. In particular, an ${n} \times{n}$ square matrix is called a _square matrix_ of order $n$.
 2. Given a square matrix $A = (a_{ij})$ of order  $n$, the diagonal of $A$ is the sequence of entries $a_{11},a_{22},\:\dots,a_{nn}$. The entries $a_{ii}$ are called the _diagonal entries_ while $a_{ij}$, $i \ne j$, are called _non-diagonal entries_. A square matrix is called a _diagonal matrix_ if all its non-diagonal entries are zero, i.e.
 		$A = (a_{ij})_{n \times n}$ is a diagonal matrix $\Leftrightarrow$ $a_{ij}$ $= 0$ whenever $i \ne j$.
@@ -161,9 +161,9 @@ _Definition 2.1.7_: The following are some special types of matrices:
 6. A square matrix $(a_{ij})$ is called symmetric if $a_{ij} = a_{ji}$ for all $i,j$.
 7. A square matrix $(a_{ij})$ is called _upper triangular_ if $a_{ij}$ $=$ $0$ whenever $i > j$; and a square matrix $(a_{ij})$ is called _lower triangular_ if $a_{ij}$ $= 0$ whenever $i < j$. Both upper and lower triangular matrices are called *triangular matrices*.
 
-_Definition 2.2.1_: Two matrices are said to be equal if they have the same size and their corresponding entries are equal. that is given $A = (a_{ij})_{m \times n}$ and $B = (b_{ij})_{p \times q}$, $A$ is equal to $B$ if $m = p, n = q,$ and $a_{ij}$ = $b_{ij}$ for all $i,j$.
+__Definition 2.2.1__: Two matrices are said to be equal if they have the same size and their corresponding entries are equal. that is given $A = (a_{ij})_{m \times n}$ and $B = (b_{ij})_{p \times q}$, $A$ is equal to $B$ if $m = p, n = q,$ and $a_{ij}$ = $b_{ij}$ for all $i,j$.
 
-_Definition  2.2.3_: Let $A = (a_{ij})_{m \times n},$ $B = (B_{ij})_{m \times n}$ and $c$ a real constant. We define the matrices $A +B, A - B$ and $cA$ as follows:
+__Definition  2.2.3__: Let $A = (a_{ij})_{m \times n},$ $B = (B_{ij})_{m \times n}$ and $c$ a real constant. We define the matrices $A +B, A - B$ and $cA$ as follows:
 1. **(Matrix Addition)** $A + B = (a_{ij} +b_{ij})_{m\times n}.$ 
 2. **(Matrix Subtraction)** $A - B = (a_{ij} -b_{ij})_{m\times n}.$ 
 3. **(Scalar Multiplication)** $cA = (ca_{ij})_{m \times n},$ where $c$ is usually called a _scaler_.
@@ -192,7 +192,7 @@ Let $A = (a_{ij}),$$B = (b_{ij})$ and $C = (c_{ij})$. Then for any $i,j,$
 			
 _Remark 2.2.7_: Let $A_{1},A_{2},\:\dots,A_{k}$ be matrices of the same size. By Associative Law for Matrix Addition, we can write$A_{1},A_{2},\:\dots,A_{k}$ to represent the sum of matrices without using any parentheses to indicate the order of matrix additions.
 
-_Definition 2.2.8 (Matrix Multiplication)_: Let $A = (a_{ij})_{m \times p}$ and $B = (B_{ij})_{p \times n}$ be two matrices. The product $AB$ is defined to be an ${m} \times{n}$ matrix whose $(i,j)$-entry is 
+__Definition 2.2.8 (Matrix Multiplication)__: Let $A = (a_{ij})_{m \times p}$ and $B = (B_{ij})_{p \times n}$ be two matrices. The product $AB$ is defined to be an ${m} \times{n}$ matrix whose $(i,j)$-entry is 
 $$
 \Huge a_{i1}b_{1j},\:a_{i2}b_{2j},\:\dots,\:+\: a_{ip}b_{pj} = \sum_{k=1}^{p} a_{ik}b_{kj}
 $$
@@ -236,4 +236,73 @@ In the following, we illustrate the proof of $A(B_1+B_2) = AB_1 + AB_2:$
 		Thus the sizes of the resulting matrices on both sides of the identity are the same.
 	(ii) Let $A = (a_{ij})$, $B_1 = (b_{ij})$ and $B_2 = (b'_{ij})$. For any $i,j$,
 		![[Pasted image 20240928214728.png]]
-		
+By (i) and (ii), we have proved $\mathbf{A(B_1 + B_2) = AB_1 + AB_2}$
+
+![[Pasted image 20240928215222.png]]
+![[Pasted image 20240928215754.png]]
+![[Pasted image 20240928215818.png]]
+
+_Remark 2.2.17_: Let $A = (a_{ij})_{m \times n}$, $x=\left(\begin{array}{c} x_1\\ x_2\\ \vdots\\x_n\end{array}\right)$ and $b=\left(\begin{array}{c} b_1\\ b_2\\ \vdots\\b_n\end{array}\right)$.
+The system of linear equations
+$$\Huge\left\{\substack{
+a_{11}x_1&+&a_{12}x_2 &+&\:\dots &+& a_{1n}x_n &=& b_1 \\ 
+a_{21}x_1&+&a_{22}x_2&+&\:\dots&+&a_{2n}x_n &=& b_2\\
+&\vdots &&&&&&\vdots&\\
+a_{m1}x_1&+&a_{m2}x_m &+&\:\dots &+& a_{mn}x_n &=& b_m 
+}\right.$$
+can be written as
+$$
+\Huge\left(
+\begin{array}{cccc}
+a_{11} & a_{12} & \dots & a_{1n}\\
+a_{21} & a_{22} & \dots & a_{2n}\\
+\vdots & \vdots &  & \vdots\\
+a_{m1} & a_{m2} & \dots & a_{mn}\\
+\end{array}
+\right)
+
+\left(
+\begin{array}{c}
+x_1\\x_2\\\vdots\\x_n
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+b_1\\b_2\\\vdots\\b_m
+\end{array}
+\right)
+
+$$
+or
+$$
+\Huge\mathbf{Ax=b}
+$$
+The matrix $A$ is called the *coefficient matrix*, $x$ the *variable matrix* and $b$ the *constant matrix* of the linear system. Furthermore, a solution $x_1 = u _1, x_2 = u_2,\:\dots, x_n = u_n$ to the linear system can be represented by an ${n} \times{1}$ matrix
+$$
+\Huge u = 
+\left(
+\begin{array}{c}
+u_1\\u_2\\\vdots\\u_n
+\end{array}
+\right),
+$$
+i.e. $u$ is said to be a *solution* to the linear system $\mathbf{Ax = b}$ if $\mathbf{Au = b}$.
+Let $A = (c_1\quad c_2\quad \dots\quad c_n)$ where $c_j$ is the $j$th column of $A$. The linear system can also be written as
+![[Pasted image 20240928221702.png]]![[Pasted image 20240928221707.png
+
+__Definition 2.2.19__: Let $A = (a_{ij})$ be an $m\times n$ matrix. The *transpose* of $A$, denoted by $A^T$ (or $A^t$), is the $n\times m$ matrix whose $(i,j)$-entry is $a_{ji}$. 
+
+_Remark 2.2.21_
+1. For a matrix $A$, the rows of $A$ is the columns of $A^T$ and vice versa.
+2. In **Definition 2.1.7.6**, a square matrix $A = (a_{ij})$ is called symmetric if $a_{ij} = a_{ji}$ for all $i,j$. Thus a square matrix $A$ is symmetric if and only if $A = A^T$
+
+**Theorem 2.2.22**: Let $A$ be an $m\times n$ matrix.
+1. $(A^T)^T = A$.
+2. If $B$ is an $m\times n$ matrix, then $(A + B)^T = A^T + B ^T$
+3. If $c$ is a scalar, then $(cA)^T = cA^T$.
+4. If $B$ is an $n \times p$ matrix, then $(AB)^T = B^TA^T$.
+**Proof**: In the following, we illustrate the proof of $(AB)^T = B^TA^T$:
+	(i) Since the size of $AB$ is $m\times p$, the size of $(AB)^T$ is $p\times m$. On the other hand, since the size of $B^T$ is $p\times n$ and $A^T$ is $n\times m$, the size of $B^TA^T$ is $p\times m$. Thus the sizes of the resulting matrices on both sides of the identity are the same.
+	![[Pasted image 20240928223750.png]]
+	
