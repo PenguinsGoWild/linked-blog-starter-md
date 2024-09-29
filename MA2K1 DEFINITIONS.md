@@ -2,6 +2,7 @@
 $$\newcommand{\R}{\mathbb{R}}
 \newcommand{\bR}{\bf{R}}
 \newcommand{\bA}{\bf{A}}
+\newcommand{\I}{\mathit{I}}
 $$
 **Definition 1.1.9**: A system of linear equations that has no solution is said to be inconsistent. A system that has at least on solution is called consistent.
 _Remark_: Every system of linear equations has either no solution, only one solution or infinitely many solutions.
@@ -53,6 +54,7 @@ _Remark 1.3.2_: In some textbooks, row-echelon forms are required to have the ad
 **Step 2**: Interchange the top row with another row, if necessary, to bring a nonzero entry to the top of the column found in Step 1.
 **Step 3**: For each row below the top row, add a suitable multiple of the top row to it so that the entry below the leading entry of the top row becomes zero.
 **Step 4**: Now cover the top row in the matrix and begin again with Step 1 applied to the submatrix that remains. Continue in this way until the entire matrix is in _row-echelon form_.
+
 _Algorithm 1.4.3 (Gauss-Jordan Elimination)_ Given an augmented matrix, we use **Algorithm 1.4.2** to reduce it to _row-echelon form_. Then follow the following procedures to reduce it to _row-echelon form_.
 **Step 5**: Multiply a suitable constant to each row so that all the leading entire become 1.
 **Step 6**: Beginning with the last nonzero row and working upward, add suitable multiples of each row to the rows above to introduce zeros above the leading entries.
@@ -358,3 +360,140 @@ _Remark 2.3.13_: Let $A$ be an invertible matrix.
 2. $\mathbf{A}^n$ is invertible and $(\mathbf{A}^n)^{-1}=\mathbf{A}^{-n}$
 
 # Section 2.4 Elementary Matrices
+**Definition 2.4.1**: In **Definition 1.2.4**, **Definition 1.2.6**, **Definition 1.3.1**, **Definition 1.4.1**, _Algorithm 1.4.2_ and _Algorithm 1.4.3_, the concepts of _elementary row operations_, *row equivalent matrices*, _row-echelon forms_, _reduced row-echelon forms_, **Gaussian Elimination**, **Gauss-Jordan Elimination** are defined for augmented matrices. From now on, these terms will also be used for matrices.
+
+**Discussion 2.4.2**: consider the three types of elementary row operations on matrices.
+1. **Multiply a row by a constant**:
+	Let $\mathbf{A}=\left(\begin{array}{cccc}1 & 0 & 2 & 3\\2 & -1 & 3 & 6\\1 & 4 & 4 & 0\\\end{array}\right)$ and $\mathbf{B}=\left(\begin{array}{cccc}1 & 0 & 2 & 3\\4 & -2 & 6 & 12\\1 & 4 & 4 & 0\\\end{array}\right)$. Note that $B$ is obtained from $A$ by multiplying the second row of $A$ by 2.
+	Let :$\mathbf{E_1}=\left(\begin{array}{ccc}1 & 0 & 0 \\0 & 2 & 0 \\0 & 0 & 1 \\\end{array}\right)$. Observe that 
+		$\mathbf{E_1A}=\left(\begin{array}{ccc}1 & 0 & 0 \\0 & 2 & 0 \\0 & 0 & 1 \\\end{array}\right)\left(\begin{array}{cccc}1 & 0 & 2 & 3\\2 & -1 & 3 & 6\\1 & 4 & 4 & 0\\\end{array}\right) =\left(\begin{array}{cccc}1 & 0 & 2 & 3\\4 & -2 & 6 & 12\\1 & 4 & 4 & 0\\\end{array}\right)=\mathbf{B}$ 
+![[Pasted image 20240930000128.png]]
+2. **Interchange two rows**:
+	Let $\mathbf{A}=\left(\begin{array}{cccc}1 & 0 & 2 & 3\\2 & -1 & 3 & 6\\1 & 4 & 4 & 0\\\end{array}\right)$ and $\mathbf{B}=\left(\begin{array}{cccc}1 & 0 & 2 & 3\\1 & 4 & 4 & 0\\2 & -1 & 3 & 6\\\end{array}\right)$. Note that $B$ is obtained from $A$ by interchanging the second and third rows of $A$.
+	Let :$\mathbf{E_1}=\left(\begin{array}{ccc}1 & 0 & 0 \\0 & 0 & 1 \\0 & 1 & 0 \\\end{array}\right)$. Observe that 
+		$\mathbf{E_2A}=\left(\begin{array}{ccc}1 & 0 & 0 \\0 & 0 & 1 \\0 & 1 & 0 \\\end{array}\right)\left(\begin{array}{cccc}1 & 0 & 2 & 3\\2 & -1 & 3 & 6\\1 & 4 & 4 & 0\\\end{array}\right) =\left(\begin{array}{cccc}1 & 0 & 2 & 3\\1 & 4 & 4 & 0\\2 & -1 & 3 & 6\\\end{array}\right)=\mathbf{B}$ 
+	In general, let $A$ be an ${m} \times{n}$ matrix and
+![[Pasted image 20240930000526.png]]
+3. **Add a multiple of a row to another row:**
+Let $\mathbf{A}=\left(\begin{array}{cccc}1 & 0 & 2 & 3\\2 & -1 & 3 & 6\\1 & 4 & 4 & 0\\\end{array}\right)$ and $\mathbf{B}=\left(\begin{array}{cccc}1 & 0 & 2 & 3\\2 & -1 & 3 & 6\\3 & 4 & 8 & 6\\\end{array}\right)$. Note that $B$ is obtained from $A$ by adding 2 times of the first row of $A$ to the third row.
+	Let :$\mathbf{E_1}=\left(\begin{array}{ccc}1 & 0 & 0 \\0 & 1 & 0 \\2 & 0 & 1 \\\end{array}\right)$. Observe that 
+		$\mathbf{E_3A}=\left(\begin{array}{ccc}1 & 0 & 0 \\0 & 1 & 0 \\2 & 0 & 1 \\\end{array}\right)\left(\begin{array}{cccc}1 & 0 & 2 & 3\\2 & -1 & 3 & 6\\1 & 4 & 4 & 0\\\end{array}\right) =\left(\begin{array}{cccc}1 & 0 & 2 & 3\\2 & -1 & 3 & 6\\3 & 4 & 8 & 6\\\end{array}\right)=\mathbf{B}$ 
+	In general, let $A$ be an ${m} \times{n}$ matrix and
+![[Pasted image 20240930000914.png]]![[Pasted image 20240930000924.png]]
+	be a square matrix of order $m$ where all entries not specified are zero. Then $\mathbf{EA}$ is the matrix which can be obtained from $A$ by adding $k$ times of the $i$th row of $A$ to the $j$th row.
+	The matrix $\mathbf{E}$ is invertible and 
+	![[Pasted image 20240930001036.png]]
+	corresponds to the row operation of adding $-k$ times of the $i$th row of a matrix to the $j$th row.
+
+**Definition 2.4.3**: A square matrix is called an *elementary matrix* if it can obtained from an identity matrix by performing a single elementary row operation.
+
+_Remark 2.4.4_
+1. The matrices $\mathbf{E}$ described in *Discussion 2.4.2* are _elementary matrix_ and every _elementary matrix_ is of one of these three types.
+2. All _elementary matrix_ are invertible and their inverses are also _elementary matrix_.
+![[Pasted image 20240930001452.png]]
+
+_Remark 2.4.6 (Proof of Theorem 1.2.7)_: Theorem 1.2.7 states that if augmented matrices of two systems of linear equation are row equivalent, then the two systems have the same set of solutions. Following _Remark 1.2.9_, we need to show the following: Let $(\mathbf{A} | \mathbf{b})$ and $(\mathbf{C} | \mathbf{d})$ be two augmented matrices such that $(\mathbf{C} | \mathbf{d})$ can be obtained from $(\mathbf{A} | \mathbf{b})$ by an elementary row operation. Then the linear system $\mathbf{Ax = b}$ and $\mathbf{Cx = d}$ have the same set of solutions.
+__Proof__: By _Discussion 2.4.2_, there exists an _elementary matrix_ $\mathbf{E}$ such that
+$$\Huge(\mathbf{C} | \mathbf{d})=\mathbf{E}(\mathbf{A} | \mathbf{b})=(\mathbf{EA} | \mathbf{Eb}),$$
+i.e. $\mathbf{C} = \mathbf{EA}$ and $\mathbf{d}=\mathbf{Eb}$.
+If $u$ is a solution to $\mathbf{Ax = b}$, then
+$$\Huge\mathbf{Au = b} \Rightarrow \mathbf{EAu = Eb} \Rightarrow \mathbf{Cu = d}$$
+and hence $u$ is a solution to $\mathbf{Cx = d}$.
+If $v$ is a solution to $\mathbf{Cx=d}$, then
+$$
+\Huge\mathbf{Cv=d}\Rightarrow\mathbf{EAv=Eb}\Rightarrow\mathbf{E^{-1}Eb}\Rightarrow\mathbf{IAv=Ib}\Rightarrow\mathbf{Av=b}
+$$
+and hence $v$ is a solution to $\mathbf{Ax = b}$.
+So we have shown that the linear systems $\mathbf{Ax = b}$ and $\mathbf{Cx = d}$ have the same set of solutions.
+
+*Theorem 2.4.7* (This theorem is part of our main theorem on invertible matrices, see _Theorem 6.1.8_): If $A$ is a square matrix, then the following statements are equivalent:
+1. $A$ is invertible.
+2. The linear system $\mathbf{Ax = \0}$ has only the trivial solution.
+3. The _reduced row-echelon form_ of $A$ is an identity matrix.
+4. $A$ can be expressed as a product of _elementary matrices_.
+
+**Proof**
+$1\Rightarrow2:$ If $A$ is invertible, then $\mathbf{Ax = \0}$ implies
+$$
+\Huge\mathbf{x = \I x = A^{-1}Ax=A^{-1}\0=\0}
+$$
+	and hence the system has only the trivial solution $\mathbf{x=0}$
+![[Pasted image 20240930003557.png]]
+![[Pasted image 20240930004127.png]]
+![[Pasted image 20240930004137.png]]
+_Remark 2.4.10_: _Theorem 2.4.7_ tells us that a square matrix is invertible if and only if its _reduced row-echelon form_ is an identity matrix. this can be used to check whether a square matrix is invertible. Actually, to check whether a square matrix is invertible, we only need to reduce the matrix to a _row-echelon form_. If the _row-echelon form_ of a square matrix has no zero row, the matrix is invertible; otherwise, the matrix is singular.
+
+_Theorem 2.4.12_: Let $A$, $B$ be square matrices of the same size. If $\mathbf{AB} = \I$, then $\mathbf{A},\mathbf{B}$ are both invertible,
+$$
+\Huge\mathbf{A^{-1} = B,\; B^{-1} = A\; \textnormal{ and }\: BA = \I}
+$$
+![[Pasted image 20240930004813.png]]
+
+_Theorem 2.4.14_: Let $A$ and $B$ be two square matrices of the same order. If $A$ is singular, then $\mathbf{AB}$ and $\mathbf{BA}$ are singular.
+
+_Discussion 2.4.15_: From *Discussion 2.4.2*, we learn that to pre-multiply an _elementary matrix_ to a matrix $\mathbf{A}$ is equivalent to doing an _elementary row operations_ on $\mathbf{A}$. What will happen if we post-multiply an _elementary matrix_ to a matrix?
+Let $\mathbf{A}$ be a ${p} \times{m}$ matrix.
+1. If $\mathbf{E}$ is the _elementary matrix_ defined in _Discussion 2.4.2.1_, then $\mathbf{AE}$ is the matrix which can be obtained from $\mathbf{A}$ by multiplying the $i$th column of $\mathbf{A}$ by :$k$.
+2. If $\mathbf{E}$ is the _elementary matrix_ defined in _Discussion 2.4.2.2_, then $\mathbf{AE}$ is the matrix which can be obtained from $\mathbf{A}$ by interchanging the $i$th and $j$th columns of $\mathbf{A}$.
+3. If $\mathbf{E}$ is the _elementary matrix_ defined in _Discussion 2.4.2.3_, then $\mathbf{AE}$ is the matrix which can be obtained from $\mathbf{A}$ by adding $k$ times the $j$th column of $\mathbf{A}$ to the $i$th column.
+The three operations on matrices described above are called _elementary column_ operations.
+
+# Section 2.5 Determinants
+_Discussion 2.5.1_: By Example 2.4.11.2, we know that a ${2} \times{2}$ matrix $\left(\begin{array}{cc}a & b \\b & d \\\end{array}\right)$ is invertible if and only if $ad-bc\ne 0$. Actually, we have a similar formula to determine whether a square matrix of higher order is invertible. The formula involves a quantity called "determinant". Unfortunately, there is no easy way to define it. In the following, we use an inductive approach to define this quantity.
+
+**Definition 2.5.2**: Let $\mathbf{A} = (a_{ij})$ be an ${n} \times{n}$ matrix. Let $\mathbf{M_{ij}}$ be an $(n-1) \times (n-1)$ matrix obtained from $\mathbf{A}$ by deleting the $i$th row and the $j$th column. Then the *determinant* of $\mathbf{A}$ is defined as
+$$det(\mathbf{A}) = \Huge\left\{ \substack{
+&a_{11}& &&&&&&&\quad\textnormal{if } n = 1\\ &a_{11}&A_{11}&\:+\:&a_{12}A_{12}&\:+\:&\dots&\:+\:&a_{1n}A_{1n}& \quad\textnormal{if } n = 1
+}\right.$$
+where
+$$
+\Huge{A_{ij} = (-1)^{i+j}det(\mathbf{M_{ij}}).}
+$$
+The number of $A_{ij}$ is called the $(i,j)$-cofactor of $\mathbf{A}$.
+The way we defined "determinant" above is known as the cofactor expansion (see also _Theorem 2.5.6_).
+![[Pasted image 20240930011550.png]]
+![[Pasted image 20240930011638.png]]
+*Theorem 2.5.6 (Cofactor Expansions)*: For an ${n} \times{n}$ matrix $\mathbf{A} = (a_{ij})$, det($\mathbf{A}$) can be expressed as a cofactor expansion using any *row* or *column* of $\mathbf{A}$:
+![[Pasted image 20240930011914.png]]
+
+_Theorem 2.5.8_: If $\mathbf{A}$ is a triangular matrix, then the determinant of $\mathbf{A}$ is equal to the product of the diagonal entries of $\mathbf{A}$.
+
+**Proof**: We shall prove the following assertion by using mathematical induction on $n$.
+![[Pasted image 20240930012139.png]]
+![[Pasted image 20240930012149.png]]
+![[Pasted image 20240930012757.png]]
+
+**Theorem 2.5.12**
+1. The determinant of a square matrix with two identical rows is zero.
+2. The determinant of a square matrix with two identical columns is zero.
+
+![[Pasted image 20240930013209.png]]
+![[Pasted image 20240930013219.png]]
+![[Pasted image 20240930013226.png]]
+*Theorem 2.5.15* Let $\Let :A be a square matrix.
+1. If $\mathbf{B}$ is a square matrix obtained from $\mathbf{A}$ by multiplying one row of $\mathbf{A}$ by a constant $k$, then det($\mathbf{B}$) $=k\,$det($\mathbf{A}$).
+2. If $\mathbf{B}$ is a square matrix obtained from $\mathbf{A}$ by interchanging two row of $\mathbf{A}$, then           det($\mathbf{B}$) $=-$det($\mathbf{A}$). 
+3. If $\mathbf{B}$ is a square matrix obtained from $\mathbf{A}$ by adding a multiple of one row of $\mathbf{A}$ to another row, then det($\mathbf{B}$) $=\;$det($\mathbf{A}$). 
+4. Let $\mathbf{E}$ be an _elementary matrix_ of the same size as $\mathbf{A}$. Then det($\mathbf{EA}$) $=\;$det($\mathbf{E}$)det($\mathbf{A}$). 
+*Proof*: In the following, we only illustrate the proof of Part 3: Let $\mathbf{A} = (a_{ij})$ be a square matrix of order $n$ and $\mathbf{B}$ a square matrix obtained from $\mathbf{A}$ by adding $k$ times of the $i$th row of $\mathbf{A}$ to the $j$th row. Then by expanding along the $j$th row of $\mathbf{B}$,
+![[Pasted image 20240930014432.png]]
+
+_Remark 2.5.16_: By *Theorem 2.5.15*, we can use elementary row operations to transform a square matrix to a triangular matrix and then by *Theorem 2.5.8*, compute the determinant accordingly.
+![[Pasted image 20240930015800.png]]
+_Remark 2.5.21_: By *Theorem 2.5.19*, we can use the determinant to check whether a given square matrix is invertible. However, for matrices of higher order, to compute determinants may not be easier than the method discussed in _Remark 2.4.10_
+
+![[Pasted image 20240930020226.png]]
+**Definition 2.5.24**: Let $\mathbf{A}$ be a square matrix of order $n$. Then the (classical) adjoint of $\mathbf{A}$ is the ${n} \times{n}$ matrix
+![[Pasted image 20240930020724.png]]
+
+_Theorem 2.5.25_: Let $\mathbf{A}$ be a square matrix. If $\mathbf{A}$ is invertible, then
+![[Pasted image 20240930020806.png]]
+
+*Theorem 2.5.27 (Cramer's Rule)*: Suppose $\mathbf{Ax = b}$ is a linear system where $\mathbf{A}$ is an ${n} \times{n}$ matrix. Let $\mathbf{A_i}$ be the matrix obtained from $\mathbf{A}$ by replacing the $i$th column of $\mathbf{A}$ by $\mathbf{b}$. If $\mathbf{A}$ is invertible, then the system has only one solution.
+![[Pasted image 20240930023239.png]]
+![[Pasted image 20240930023244.png]]
+![[Pasted image 20240930023654.png]]
+![[Pasted image 20240930023700.png]]
+
+# Chapter 3
+# Vector Spaces
