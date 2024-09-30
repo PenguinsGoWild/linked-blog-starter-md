@@ -15,7 +15,7 @@ Given two lines in the $xy$-plane,
 
 Given two planes in the $xyz$-space,
 	a) The system has no solution if and only if the first plane and the second plane are different but parallel.
-	b) The system cannot have only one soltuion.
+	b) The system cannot have only one solution.
 	c) The system has infinitely many solutions if and only if either the first plane and second plane intersect at a line or the first plane and the second plane are the same plane.
 	_Note that the two planes are parallel if and only if $a_1 = ka_2$ and $b_1 = kb_2$ and $c_1 = kc_2$ for a nonzero real number $k$._
 
@@ -291,8 +291,7 @@ u_1\\u_2\\\vdots\\u_n
 $$
 i.e. $u$ is said to be a *solution* to the linear system $\mathbf{Ax = b}$ if $\mathbf{Au = b}$.
 Let $A = (c_1\quad c_2\quad \dots\quad c_n)$ where $c_j$ is the $j$th column of $A$. The linear system can also be written as
-![[Pasted image 20240928221702.png]]![[Pasted image 20240928221707.png
-
+![[Pasted image 20240928221702.png]]![[Pasted image 20240928221707.png]]n
 __Definition 2.2.19__: Let $A = (a_{ij})$ be an $m\times n$ matrix. The *transpose* of $A$, denoted by $A^T$ (or $A^t$), is the $n\times m$ matrix whose $(i,j)$-entry is $a_{ji}$. 
 
 _Remark 2.2.21_
