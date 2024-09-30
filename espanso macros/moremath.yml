@@ -3,6 +3,11 @@ matches:
     replace: general solution
     uppercase_style: capitalize_words
     propagate_case: true
+
+  - trigger: elemat
+    replace: _elementary matrix_
+    uppercase_style: capitalize_words
+    propagate_case: true
     
   - trigger: trivsol
     replace: trivial solution
@@ -111,8 +116,84 @@ matches:
   - trigger: Remark
     replace: _Remark $|$_
 
-  - trigger: Definition
-    replace: _Definition $|$_
+  - trigger: Defn
+    replace: "**Definition $|$**"
 
   - trigger: ijentry 
     replace: $(i,j)$-entry
+    
+  - trigger: ijentries
+    replace: $(i,j)$-entries
+
+  - trigger: A+B
+    replace: $\mathbf{A} + \mathbf{B}$
+
+  - trigger: B1+B2
+    replace: $\mathbf{B_1} + \mathbf{B_2}$
+
+  - trigger: \tn
+    replace: \textnormal{$|$}
+
+  - trigger: \mbf
+    replace: \mathbf{$|$}
+
+  - trigger: :colmat
+    form: |
+      $$
+      \left(
+      \begin{array}{c}
+      [[1]]_1\\[[2]]_2\\\vdots\\[[3]]_n
+      \end{array}
+      \right)
+      $$
+
+  - trigger: Ax=b
+    replace: $\mathbf{Ax = b}$
+
+  - trigger: mbn 
+    replace: $m\times n$
+  
+  - trigger: AuT
+    replace: $\mathbf{A}^T$
+
+  - trigger: BuT
+    replace: $\mathbf{B}^T$
+
+  - trigger: nbm
+    replace: $n\times m$
+
+  - trigger: ;ab
+    replace: $\mathbf{AB}$
+
+  - trigger: ;ba
+    replace: $\mathbf{BA}$
+
+  - trigger: ;b1
+    replace: $\mathbf{B_1}$
+
+  - trigger: ;b2
+    replace: $\mathbf{B_2}$
+
+  - trigger: ;a-1
+    replace: $\mathbf{A^{-1}}$
+
+  - trigger: AB=I 
+    replace: $\mathbf{AB = I}$
+
+  - trigger: BA=I 
+    replace: $\mathbf{BA = I}$
+
+  - trigger: A1Ak 
+    replace: $\mathbf{A_{1},A_{2}},\:\dots,\mathbf{A_{k}}$
+
+  - trigger: ;ae 
+    replace: $\mathbf{AE}$
+
+  - trigger: ;e 
+    replace: $\mathbf{E}$
+
+  - trigger: ;be 
+    replace: $\mathbf{BE}$
+
+  - trigger: ;dis 
+    replace: "_Discussion $|$_:"

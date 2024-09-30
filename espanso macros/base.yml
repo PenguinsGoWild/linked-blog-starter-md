@@ -39,11 +39,11 @@ matches:
     replace : $\bR$
     
   - trigger: :A 
-    replace: $A$
+    replace: $\mathbf{A}$
     word: true
 
   - trigger: :B 
-    replace: $B$
+    replace: $\mathbf{B}$
     word: true
 
   - trigger: .n
@@ -60,13 +60,13 @@ matches:
     word: true
 
   - trigger: A=aij
-    replace: $A = (a_{ij})$
+    replace: $\mathbf{A} = (a_{ij})$
     
   - trigger: A=uaij
-    replace: $A = (a_{ij})_{m \times n}$
+    replace: $\mathbf{A} = (a_{ij})_{m \times n}$
 
   - trigger: A=saij
-    replace: $A = (a_{ij})_{n \times n}$
+    replace: $\mathbf{A} = (a_{ij})_{n \times n}$
 
   - trigger: (bij)
     replace: $(b_{ij})$
@@ -77,10 +77,10 @@ matches:
     word: true
 
   - trigger: B=bij
-    replace: $B = (b_{ij})$
+    replace: $\mathbf{B} = (b_{ij})$
     
   - trigger: B=ubij
-    replace: $B = (B_{ij})_{p \times q}$
+    replace: $\mathbf{B} = (B_{ij})_{p \times q}$
 
   - trigger: :ream 
     replace: _row-equivalent augmented matrix_
