@@ -240,6 +240,9 @@ In the following, we illustrate the proof of $A(B_1+B_2) = AB_1 + AB_2:$
 		![[Pasted image 20240928214728.png]]
 By (i) and (ii), we have proved $\mathbf{A(B_1 + B_2) = AB_1 + AB_2}$
 
+**Definition 2.2.12 (Powers of Square Matrices)** Let $\mathbf{A}$ be a square matrix and $n$ a nonnegative integer. We define $\mathbf{A}^n$ as follows:
+![[Pasted image 20241001213132.png]]
+
 ![[Pasted image 20240928215222.png]]
 ![[Pasted image 20240928215754.png]]
 ![[Pasted image 20240928215818.png]]
