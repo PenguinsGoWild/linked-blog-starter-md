@@ -85,3 +85,48 @@ Note that the two planes $P_1$ and $P_2$ are parallel if and only if $a_1 = ka_2
 
 # Elementary Row Operations
 $$\Huge\left\{\substack{a_{11}x_1&+&a_{12}x_2 &+&\:\dots &+& a_{1n}x_n &=& b_1 \\ a_{21}x_1&+&a_{22}x_2&+&\:\dots&+&a_{2n}x_n &=& b_2\\&\vdots &&&&&&\vdots&\\a_{m1}x_1&+&a_{m2}x_m &+&\:\dots &+& a_{mn}x_n &=& b_m }\right.\;\; \small\textnormal{Where s is an arbitrary parameter.}$$
+
+$P(\R) = \{$all polynomials with real coefficients$\}$
+
+# Bases
+Linearly independent and spans a space
+
+1. A basis for a vector space V contains the smallest possible number of vectors that can span V
+2. maximally linearly independent set is a basis
+3. For convenience, we say that the empty set $\emptyset$, is the basis for the zero space.
+4. Except the zero space, any vector space has infinitely many different bases. (In $\R ^ n$
+
+
+(Coordinate vectors and their properties)
+
+
+1. Once a coordinate system is built using a basis, every vector in the vector space is expressed uniquely as a linear combination of the basis vectors.
+2. Definition of a coordinate vectors (relative to a basis)
+3. Equality of coordinate vectors; coordinate vector of linear combinations versus linear combination of coordinate vectors. (_Remark 3.5.10_, this is needed to prove Theorem 3.5.11)
+Isomorphism (2 objects look different but same)
+4. 
+
+(Dimension of a vector space. Another equivalent statement)
+1. All bases for a vector space $V$ has the same number of vectors (too many = linearly dependent, too few = cannot span). (Theorem 3.6.11).
+2. **Definition** of the dimension of a vector space. Finding a basis and determining the dimension of the solution space of a homogeneous linear system. Dimension = number of non-pivot columns.
+3. Knowing the dimension of $V$ saves half the work. (Theorem 3.6.7)
+	In $\R ^n$, any independent list of length n is a basis. 
+4. Dimension of subspace versus dimension of the parent space. (Theorem 3.6.9)
+	You can start with a basis for a subspace $u$ of a space $v$, you can extend $u$ and find a basis for $v$. The reverse does not hold true.
+5. Equivalent statements to '$\mathbf{A}$ is invertible' in terms of rows and columns forming a basis.
+
+Let $u_{1},u_{2},\:\dots,u_{k}$  be vectors in $\R^n$ and $\mathbf{A}$ a square matrix of order n.
+	a) Show that if $Au_{1},Au_{2},\:\dots,Au_{k}$ are linearly independent, then $u_{1},u_{2},\:\dots,u_{k}$ are linearly independent
+	 Suppose that $\alpha_1 u_{1},\alpha_2 a u_{2},\:\dots,\alpha_k u_{k} = 0$
+	 Then $0 = A0 = A(\alpha_1 A u_{1},\alpha_2 Au_{2},\:\dots,\alpha_k Au_{k}) = u_{1},u_{2},\:\dots,u_{k}$
+	 Then $\alpha_1=\alpha_2= \dots =\alpha_k= 0$
+
+b) Suppose   $u_{1},u_{2},\:\dots,u_{k}$ are linearly independent.
+	i) Show that if $\mathbf{A}$ is invertible, then $Au_{1},Au_{2},\:\dots,Au_{k}$ are linearly independent.
+	 Suppose that $\alpha_1 u_{1},\alpha_2 a u_{2},\:\dots,\alpha_k u_{k} = 0$
+	 Then $Au_{1},Au_{2},\:\dots,Au_{k} =A(\alpha_1 u_{1},\alpha_2 a u_{2},\:\dots,\alpha_k u_{k}) = A0 = 0$
+	 $\alpha_1 u_{1},\alpha_2 a u_{2},\:\dots,\alpha_k u_{k} = 0 + A^{-1}A(\alpha_1 u_{1},\alpha_2 a u_{2},\:\dots,\alpha_k u_{k}) = A^{-1}0=()$
+	 Then $\alpha_1=\alpha_2= \dots =\alpha_k= 0$
+	 ii) If $\mathbf{A}$ is singular, are Au1 au2 auk linearly independent?
+	 Depends
+
