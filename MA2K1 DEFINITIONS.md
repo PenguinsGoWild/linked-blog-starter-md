@@ -472,7 +472,7 @@ _Theorem 2.5.8_: If $\mathbf{A}$ is a triangular matrix, then the determinant of
 ![[Pasted image 20240930013209.png]]
 ![[Pasted image 20240930013219.png]]
 ![[Pasted image 20240930013226.png]]
-*Theorem 2.5.15* Let $\Let :A be a square matrix.
+*Theorem 2.5.15* Let $\mathbf{A}$ be a square matrix.
 1. If $\mathbf{B}$ is a square matrix obtained from $\mathbf{A}$ by multiplying one row of $\mathbf{A}$ by a constant $k$, then det($\mathbf{B}$) $=k\,$det($\mathbf{A}$).
 2. If $\mathbf{B}$ is a square matrix obtained from $\mathbf{A}$ by interchanging two row of $\mathbf{A}$, then           det($\mathbf{B}$) $=-$det($\mathbf{A}$). 
 3. If $\mathbf{B}$ is a square matrix obtained from $\mathbf{A}$ by adding a multiple of one row of $\mathbf{A}$ to another row, then det($\mathbf{B}$) $=\;$det($\mathbf{A}$). 
