@@ -499,3 +499,21 @@ _Theorem 2.5.25_: Let $\mathbf{A}$ be a square matrix. If $\mathbf{A}$ is invert
 
 # Chapter 3
 # Vector Spaces
+
+**Discussion 3.1.1 (Geometric Vectors)** A (nonzero) vector is represented geometrically by a directed line segment or an arrow; the direction of the arrow specifies the direction of the vector and the length of the arrow describes its magnittude. The zero vector is represented by a point or a degenerated arow with zero length and no direction. Two (nonzero) vectors are regarded as equal if they have the same length and direction. For example, in the following diagram, the two vectors $u$  and $v$ are the same but different from the vectors $w$ and $x$.
+
+![[Pasted image 20241023101913.png]]
+
+The addition, negative, difference and scalar multiple of vectors can be defined geometrically as follows.
+	(a) The addition $u+v$ of two vectors $u$ and $v$:
+	![[Pasted image 20241023102012.png]]
+	Note that $u+v$ is the same as $v+u$.
+	(b) The negative $-u$ of a vector $u$:
+	![[Pasted image 20241023102104.png]]
+	The vector $-u$ has the same length as $u$ but in the reverse direction.
+	(c) The difference $u-v$ of two vectors $u$ and $v$:
+	![[Pasted image 20241023102206.png]]
+	Note that $u-v$ is the same as $u+(-v)$
+	(d) The scalar multiple $c\mathbf{u}$ of a vector $u$ where c is a real number:
+	![[Pasted image 20241023102329.png]]
+	
