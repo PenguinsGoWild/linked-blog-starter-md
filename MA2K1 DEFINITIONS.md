@@ -516,4 +516,52 @@ The addition, negative, difference and scalar multiple of vectors can be defined
 	Note that $u-v$ is the same as $u+(-v)$
 	(d) The scalar multiple $c\mathbf{u}$ of a vector $u$ where c is a real number:
 	![[Pasted image 20241023102329.png]]
-	
+	If c is positive, the vector $c\mathbf{u}$ has the same direction us $u$ and its length is c times of the length of $u$. If c is negative, the vector $c\mathbf{u}$ is in the reverse direction of u and its length is |c| times of the length of u. Note taht 0u is the zero vector and $(-1)\mathbf{u}$ is the negative of u.
+
+**Discussion 3.1.2 (Coordinate Systems):**
+1. **Vectors in xy-plane:** Suppose we position a vector $u$ in the $xy$-plane such that its initial point is at the origin (0,0). The coordinates $(u_1, u_2)$ of the end point of $u$ are called the components of $\mathbf{u}$ and we write $\mathbf{u}$ = $(u_1, u_2)$ 
+	(a) The addition of two vectors: Let $\mathbf{u}$ = $(u_1, u_2)$ and $\mathbf{v}$ = $(v_1, v_2)$. Then $\mathbf{u}$ + $\mathbf{v}$ = $(v_1 + v_1, u_1 + u2)$.
+	(b) The scalar multiple of a vector: Let $\mathbf{u}$ = $(u_1, u_2)$. Then $c\mathbf{u}$ = $(cu_1, cu_2)$ for any real number c.
+
+**Definition 3.1.3** An n-vector or ordered n-tuple of real numbers has the form
+$$
+ (u_1, u_2,\, \dots, u_i, \,\dots, u_n)
+$$
+where $u_1, u_2,\, \dots, u_n$ are real numbers. The number $u_i$ in the $i$th position of an n-vector is called the $i$th component or the $i$th coordinate of the n-vector.
+Let $(\mathbf{u} = u_1,u_2,\,\dots,u_n)$ and $(\mathbf{v} = v_1,v_2,\,\dots,v_n)$ be two $n$-vectors.
+1. We say that $\mathbf{u}$ and $\mathbf{v}$ are *equal* if and only if $u_i$ = $v_i$ for all $i = 1,2,\dots,n$.
+2. The *addition* $\mathbf{u}$ + $\mathbf{v}$ of $\mathbf{u}$ and $\mathbf{v}$ is defined by 
+$$ \mathbf{u} + \mathbf{v} = (u_1 + v_1,u_2 + v_2,\,\dots,u_n + v_n)$$
+3. Let c be a real number. The *scalar multiple* of $c\mathbf{u}$ of $\mathbf{u}$ is defined by
+$$ c\mathbf{u} = (cu_1 ,cu_2 ,\,\dots,cu_n)$$
+4. The n-vector $(0,0,\;\dots,0)$ is called the *zero vector* and it is denoted by $\mathbf{0}$.
+5. We define the *negative* of $\mathbf{u}$ to be $(-1)\mathbf{u}$ and denote it by $-\mathbf{u}$ , i.e.
+$$ -\mathbf{u} = (-u_1 ,-u_2 ,\,\dots,-u_n)$$
+6. The subtraction $\mathbf{u} - \mathbf{v}$ of $\mathbf{v}$ from $\mathbf{u}$ is defined by $\mathbf{u} + (-\mathbf{v}), i.e.$ 
+$$ \mathbf{u} - \mathbf{v} = (u_1 - v_1,u_2 - v_2,\,\dots,u_n - v_n)$$
+**Notation 3.1.5**  The features in the definition of n-vectors are similar to those of matrices. In certain context, we can identify an n-vector $(u_1,u_2,\,\dots,u_n)$ with a $1\times n$ matrix $(u_1\quad u_2\quad\dots\quad u_n)$ (row vector) or an ${n} \times{1}$ matrix $\left(\begin{array}{1} u_1 \\ u_2 \\ \vdots \\ u_n \end{array}\right)$ (column vector).
+
+**Theorem 3.1.6** Let $\mathbf{u}$,$\mathbf{v}$,$\mathbf{w}$ be n-vectors and c, d are real numbers. Then
+![[Pasted image 20241023185301.png]]
+**Proof**  All these properties of n-vectors can be easily verified by expressing the n-vectors in their component forms.
+**Definition 3.1.7** The set of all n-vectors of real numbers is called the Euclidean n-space or simply n-space. We use $\R$ to denote the set of all real numbers and $\R^n$ to denote the Euclidean n-space. If we say that $\mathbf{u}$ is a vector in $\R^n$, we mean that $\mathbf{u}$ is an n-vectors, i.e. $\mathbf{u} \in \R^n$ if and only if $\mathbf{u} = (u_1,u_2,\,\dots,u_n)$ for some $u_1,u_2,\,\dots,u_n \in \R$.
+![[Pasted image 20241023185751.png]]
+![[Pasted image 20241023185802.png]]
+![[Pasted image 20241023185813.png]]
+![[Pasted image 20241023185819.png]]
+*Notation 3.1.9* Let $S$ be a finite set. We use $|S|$ to denote the number of elements contained in $S$.
+
+# Section 3.2 Linear Combinations and Linear Spans
+**Definition  3.2.1** Let $u_1,u_2,\,\dots,u_k$ be vectors in $\R^n$. For any real numbers $c_1,c_2,\,\dots,c_k$ the vector
+$$c_1u_1,c_1u_2,\,\dots,c_1u_n$$
+is called a linear combination of $u_1,u_2,\,\dots,u_k$ 
+
+**Definition 3.2.3** Let $S = \{u_1,u_2,\,\dots,u_k\}$ be a set of vectors in $\R^n$.Then the set of all linear combinations of $u_1,u_2,\,\dots,u_k$,
+![[Pasted image 20241023190242.png]]
+![[Pasted image 20241023190342.png]]
+![[Pasted image 20241023190350.png]]
+![[Pasted image 20241023190356.png]]
+
+*Discussion 3.2.5* In the following, we present a method to determine whether a set of vectors spans the whole $\R^n$:
+![[Pasted image 20241023190629.png]]
+![[Pasted image 20241023190949.png]]
