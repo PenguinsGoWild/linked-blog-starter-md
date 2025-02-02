@@ -74,7 +74,7 @@ VINE (voiced)
 
 ### Interdental
 *between thine teeth*
-**TH**IN (voiceless) **\[ Θ \]**
+**TH**IN (voiceless) **\[ θ \]**
 **TH**IS (voiced) **\[ ð \]**
 
 Different people have different ways of making these sounds!
@@ -140,7 +140,7 @@ There are two types of stop:
 
 ### Fricatives and Affricates
 - **Fricative**: partial obstruction, causing turbulence  (a "buzzy" noise).
-	- \[f\], \[t\], \[Θ\], \[ð\], \[s\], \[z\], \[ʃ\], \[ʒ\], \[h\]
+	- \[f\], \[t\], \[θ\], \[ð\], \[s\], \[z\], \[ʃ\], \[ʒ\], \[h\]
 - **Affricate**: a stop plus a fricative.
 	- \[tʃ\], \[ʤ\]
 
@@ -176,3 +176,9 @@ For this module, we will focus on broad transcription.
 To type in IPA, this tool is recommended:
 [here](http://westonruter.github.io/ipa-chart/keyboard/)
 
+## Why am I finding some consonants difficult to distinguish?
+**Final consonant devoicing**: in Singapore, many speakers pronounce voiced consonants at the ends of words as voiceless.
+- Do 'peace' and 'peas' sound the same to you?
+
+**th/dh stopping**: in Singapore, many speakers pronounce \[θ] as \[t] and \[ð] as \[d].
+- Do 'thin' and 'tin' sound the same to you?
