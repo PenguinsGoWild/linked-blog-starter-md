@@ -1,4 +1,3 @@
-# Week 01
 *Linguistics is the scientific study of language as a system and as a social phenomenon*
 
 **Grammar**
