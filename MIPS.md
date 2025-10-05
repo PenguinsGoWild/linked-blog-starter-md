@@ -1,6 +1,6 @@
-R-
-I-
-J-
+R- 6 5 5 5 6 (32)
+I- 
+J- 6, 16
 
 
 ## Complex Instruction Set Computer (CISC)
@@ -62,3 +62,100 @@ Operands may be implicit or explicit
 		* e.g MIPS, ARM
 	* CISC computers use a mixture of Register-Register and Register-Memory
 		* e.g IA32
+
+## Memory Address and Content
+- Given k-bit address, the address space is of size $2^k$ 
+- Each memory transfer consists of one word of n bits
+- Types of processors
+	- Memory Address Register
+		- k-bit address bus
+			* one direction towards memory, write to memory only
+		- writes addresses
+		- 0 - $2^32$
+	* Memory Data Register
+		* n-bit data bus
+			* bidirectional, read and write to memory
+		* writes data
+- The buses are called control lines
+	- Manages if current memory access is read or write
+
+## Memory Content: Endianness
+- Endianness:
+	- The relative ordering of the **bytes** in a multiple-byte word stored in memory
+* Big Endian
+	* MSB to lowest (topmost) address
+	* Read from lowest to highest address
+	* E.g. IBM 360/370, Motorola 68000 MIPS (Silicon Graphics), SPARC
+* Little Endian
+	* LSB to lowest (topmost) address
+	* Read from highest to lowest address
+	* E.g. Intel 80x86, DEX VAX, DEX Alpha
+
+## Addressing Modes
+- Addressing Mode:
+	- Ways to specify an operand in an assembly language
+- In MIPS, there are only 3 addressing modes:
+	- Register:
+		- Operand is in a register (eg. add $t1, $t2, $t3)
+	- Immediate:
+		- Operand is specified in the instruction directly (eg: addi $t1, $t2, 98)
+	- Displacement:
+		- Operand is in memory with address calculated as Base + Offset. (e.g lw \$t1, 20(\$t2))
+
+![[Pasted image 20250908214148.png]]
+
+![[Pasted image 20250908214528.png]]
+## Frequently Used Instructions
+- Profiler (SW)
+	- Code
+	- Memory
+	- Cache Performance
+	- Most Frequently Used Instructions
+- Load, Conditional Branch, Compare, Store
+
+## Instruction Formats
+- Instruction Length
+	- Variable-length (CISC)
+		- Intel 80x86: instructions vary from 1 to 17 bytes long
+		- Digital VAX: Instructions vary from 1 to 54 bytes long.
+		- Require multi-step fetch and decode
+		- Allow for a more flexible (but complex) and compact instruction set
+	- Fixed-length (RISC)
+		- Used in most RISC
+		- MIPS, PowerPC, ARM: Instructions are 4 bytes long
+		- Allow for easy fetch and decode
+		- Simplify pipelining and parallelism
+		- Instruction bits are scarce
+		- e.g. ARM 64 bit -> 2x32bit or 1x64bit
+			- Very Long Instruction Word (VLIW) architecture
+- There is also hybrid instructions: a mix of variable: and fixed-length instructions
+## Instruction Fields
+- An instruction consists of:
+	- opcode: unique code to specify the desired operation
+	- operands: zero or more additional information needed for the operation
+- The operation designates the type and size of the operands
+	- Typical type and size: Character (8 bits), half-word (eg: 16 bits), word (eg. 32 bits), single-precision floating point (eg: 1 word), double-precision floating point (eg: 2 words).
+- Expectations from any new 32-bit architecture:
+	- Support for 8-, 16- and 32-bit integer and 32-bit and 64-bit floating point operations. A 64-bit architecture would need to support 64-bit integers as well.
+
+## Instruction Encoding
+- Issues: Code size, speed/performance, design complexity
+- Things to be decided:
+	- Number of registers
+	- Number of addressing modes - more modes more complex
+	- Number of operands in an instruction
+- The different competing forces:
+	- How many registers and addresing modes
+	- Reduce code size (RISC vs CISC)
+	- Have instruction length that is easy to handle (fixed-length instructions are easier to handle)
+
+# Control Paths
+| Control Signal   | Execution Stage      | Purpose                                               |
+| ---------------- | -------------------- | ----------------------------------------------------- |
+| RegDst           | Decode/Operand Fetch | Select the destination register number                |
+| RegWrite         | Decode/Operand Fetch | Enable writing of register                            |
+| ALUSrc           | ALU                  | Select the 2nd operand for ALU                        |
+| ALUcontrol       | ALU                  | Select the operation to be performed                  |
+| MemRead/MemWrite | Memory               | Enable reading/writing of data memory                 |
+| MemToReg         | RegWrite             | Select the result to be written back to register file |
+| PCSrc            | Memory/RegWrite      | Select the next PC value                              |
